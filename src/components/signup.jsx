@@ -22,9 +22,9 @@ class Signup extends Component {
       <BrowserRouter>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-            <div className="fadeIn first mb-3">
+            {/* <div className="fadeIn first mb-3">
               <h1>Signup</h1>
-            </div>
+            </div> */}
             <form action="/login" onSubmit={this.handleSubmit}>
               <input
                 type="text"
