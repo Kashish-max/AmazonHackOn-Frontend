@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./login.css";
-import Signup from "./signup";
 
 class Login extends Component {
   state = {};
@@ -11,9 +10,9 @@ class Login extends Component {
       <BrowserRouter>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-            <div className="fadeIn first mb-3">
+            {/* <div className="fadeIn first mb-3">
               <h1>Login</h1>
-            </div>
+            </div> */}
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
