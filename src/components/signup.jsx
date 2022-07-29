@@ -29,7 +29,7 @@ class Signup extends Component {
               <input
                 type="text"
                 id="login"
-                className="fadeIn second mb-3"
+                className="fadeIn second mb-3 username-input-text"
                 name="username"
                 placeholder="Username"
                 onChange={this.handleChange}
@@ -57,8 +57,9 @@ class Signup extends Component {
                 name="c_password"
                 placeholder="Confirm password"
               />
-
+              <div className="submit-btn">
               <input type="submit" className="fadeIn fourth" value="Sign Up" />
+              </div>
             </form>
           </div>
         </div>

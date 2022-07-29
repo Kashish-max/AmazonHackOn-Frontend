@@ -49,6 +49,7 @@ h2 {
   padding: 0px;
   text-align: center;
   border: 1px solid #d4d5d9;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 #formFooter {
@@ -265,6 +266,7 @@ input:placeholder {
 
 .underlineHover:hover {
   color: #0d0d0d;
+  text-decoration: none;
 }
 
 .underlineHover:hover:after {
@@ -286,4 +288,12 @@ input:placeholder {
   margin-top: 1rem;
   text-decoration: underline;
   text-transform: Capitalize;
+}
+
+.username-input-text {
+  padding-top: 40px;
+}
+
+.submit-btn{
+  padding-top: 20px;
 }

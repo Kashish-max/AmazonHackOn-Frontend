@@ -8,16 +8,30 @@
   text-align: center;
   padding: 0.5rem 3rem;
   border-radius: 40px;
-  margin: 0 0.5rem;
+  /* margin: 0 0.5rem; */
   transition: 0.5s;
   color: #555;
   font-weight: 500;
-  border: 1px solid #fafafa;
-  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #d4d5d9;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header a:hover {
   background: #56baed;
   color: #fafafa;
   text-decoration: none;
+}
+
+.login-header-btn , .signup-header-btn {
+  width: 50%;
+}
+
+.header-btn{
+  width: 450px;
+  display: flex;
+}
+
+.header-btn-gap{
+  width: 1rem;
 }

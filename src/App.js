@@ -8,8 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="header">
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
+        <div className="header-btn">
+        <Link to="/login" className="login-header-btn">Login</Link>
+        <div className="header-btn-gap"></div>
+        <Link to="/signup" className="signup-header-btn">Signup</Link>
+        </div>
       </div>
       <Route component={Signup} path="/signup" />
       <Route component={Login} path="/login" />

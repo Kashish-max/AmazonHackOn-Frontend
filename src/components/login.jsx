@@ -17,7 +17,7 @@ class Login extends Component {
               <input
                 type="text"
                 id="login"
-                className="fadeIn second mb-3"
+                className="fadeIn second mb-3 username-input-text"
                 name="username"
                 placeholder="Username"
               />
@@ -27,8 +27,9 @@ class Login extends Component {
                 className="fadeIn third mb-3"
                 name="password"
                 placeholder="password"
-              />
+              /><div className="submit-btn">
               <input type="submit" className="fadeIn fourth" value="Log In" />
+              </div>
             </form>
 
             <div id="formFooter">
