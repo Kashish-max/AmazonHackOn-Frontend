@@ -48,6 +48,7 @@ h2 {
     position: relative;
     padding: 0px;
     text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 #formFooter {
@@ -283,3 +284,11 @@ input:placeholder {
 .signup p {
     margin-bottom: 0;
 }
+
+.username-input-text {
+    padding-top: 40px;
+}
+
+.submit-btn{
+    padding-top: 20px;
+  }
