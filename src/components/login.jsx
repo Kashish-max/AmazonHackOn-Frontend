@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./login.css";
 
 class Login extends Component {
@@ -33,7 +33,7 @@ class Login extends Component {
             </form>
 
             <div id="formFooter">
-              <a className="underlineHover" href="#">
+              <a className="underlineHover" href="/">
                 Forgot Password?
               </a>
             </div>

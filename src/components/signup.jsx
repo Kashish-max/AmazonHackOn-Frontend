@@ -1,20 +1,23 @@
+import axios from "axios";
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "./signup.css";
 
 class Signup extends Component {
-  state = {
-    username: "username",
-    email: "email",
-    password: "password",
-  };
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    console.log(this.state);
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    const { username, email, password } = event.target
+    const registerURL = "http://localhost:8000/auth/register/"
+    const response = await axios.post(registerURL, {
+      username: username.value,
+      email: email.value,
+      password: password.value
+    })
+    if(response) {
+      console.log(response)
+      window.location.replace('http://localhost:3000/login');
+    }
   };
 
   render() {
@@ -25,10 +28,9 @@ class Signup extends Component {
             {/* <div className="fadeIn first mb-3">
               <h1>Signup</h1>
             </div> */}
-            <form action="/login" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} action="/login">
               <input
                 type="text"
-                id="login"
                 className="fadeIn second mb-3 username-input-text"
                 name="username"
                 placeholder="Username"
@@ -36,7 +38,6 @@ class Signup extends Component {
               />
               <input
                 type="email"
-                id="login"
                 className="fadeIn second mb-3"
                 name="email"
                 placeholder="Email"
@@ -44,7 +45,6 @@ class Signup extends Component {
               />
               <input
                 type="password"
-                id="password"
                 className="fadeIn third mb-3"
                 name="password"
                 placeholder="password"
@@ -52,13 +52,12 @@ class Signup extends Component {
               />
               <input
                 type="password"
-                id="password"
                 className="fadeIn third mb-3"
                 name="c_password"
                 placeholder="Confirm password"
               />
               <div className="submit-btn">
-              <input type="submit" className="fadeIn fourth" value="Sign Up" />
+                <input type="submit" className="fadeIn fourth" value="Sign Up" />
               </div>
             </form>
           </div>
