@@ -20,6 +20,18 @@ class Signup extends Component {
     }
   };
 
+  checkPassword = (event) => {
+    if(document.querySelector('#password-textfield').value !== event.target.value)
+    {
+      document.querySelector('#confirm-password-textfield').classList.add("confirm-password-wrong-entry");
+    }
+
+    else
+    {
+      document.querySelector('#confirm-password-textfield').classList.remove("confirm-password-wrong-entry");
+    }
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -28,10 +40,10 @@ class Signup extends Component {
             {/* <div className="fadeIn first mb-3">
               <h1>Signup</h1>
             </div> */}
-            <form onSubmit={this.handleSubmit} action="/login">
+            <form onSubmit={this.handleSubmit} action="/login" className="signup-form-wrapper">
               <input
                 type="text"
-                className="fadeIn second mb-3 username-input-text"
+                className="fadeIn second mb-3"
                 name="username"
                 placeholder="Username"
                 onChange={this.handleChange}
@@ -46,15 +58,18 @@ class Signup extends Component {
               <input
                 type="password"
                 className="fadeIn third mb-3"
+                id="password-textfield"
                 name="password"
-                placeholder="password"
+                placeholder="Password"
                 onChange={this.handleChange}
               />
               <input
                 type="password"
                 className="fadeIn third mb-3"
+                id="confirm-password-textfield"
                 name="c_password"
-                placeholder="Confirm password"
+                placeholder="Confirm Password"
+                onKeyUp={this.checkPassword}
               />
               <div className="submit-btn">
                 <input type="submit" className="fadeIn fourth" value="Sign Up" />
