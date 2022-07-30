@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import "./login.css";
 
@@ -8,18 +9,20 @@ class Login extends Component {
     this.state = {};
   }
   handleSubmit = async (event) => {
-    // event.preventDefault()
-    // const { email, password } = event.target
-    // const loginURL = "http://localhost:8000/auth/login/"
-    // const response = await axios.post(registerURL, {
-    //   username: username.value,
-    //   email: email.value,
-    //   password: password.value
-    // })
-    // if(response) {
-    //   console.log(response)
-    //   window.location.replace('http://localhost:3000/login');
-    // }
+    event.preventDefault()
+    const { username, password } = event.target
+    const accessTokenURL = "http://localhost:8000/auth/token/"
+    const response = await axios.post(accessTokenURL, {
+      username: username.value,
+      password: password.value
+    })
+    if(response) {
+      localStorage.setItem('accessToken', response.data.access);
+      localStorage.setItem('refreshToken', response.data.refresh)
+      
+      // window.location.replace('http://localhost:3000/token');
+      return false
+    }
   };
 
   render() {
