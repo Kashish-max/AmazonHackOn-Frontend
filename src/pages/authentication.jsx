@@ -1,5 +1,5 @@
 import React from "react";
-import "./authentication.css";
+import "./stylesheets/authentication.css";
 import Login from "../components/login";
 import Signup from "../components/signup";
 import { BrowserRouter, Route, Link } from "react-router-dom";
