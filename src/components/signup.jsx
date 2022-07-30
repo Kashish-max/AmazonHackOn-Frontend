@@ -5,9 +5,22 @@ import { BrowserRouter } from "react-router-dom";
 import "./signup.css";
 
 class Signup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      passwordMatching: true,
+    };
+  }
   handleSubmit = async (event) => {
     event.preventDefault()
-    const { username, email, password } = event.target
+    const { username, email, password, c_password } = event.target
+    if (password.value != c_password.value) {
+      this.setState({ passwordMatching: false })
+      setTimeout(() => {
+        this.setState({ passwordMatching: true })
+      }, 2000)
+      return false;
+    }
     const registerURL = "http://localhost:8000/auth/register/"
     const response = await axios.post(registerURL, {
       username: username.value,
@@ -37,9 +50,11 @@ class Signup extends Component {
       <BrowserRouter>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-            {/* <div className="fadeIn first mb-3">
-              <h1>Signup</h1>
-            </div> */}
+            { !this.state.passwordMatching &&
+              <div className="alert alert-danger password-confirmation">
+              The password confirmation does not match!
+              </div>
+            }
             <form onSubmit={this.handleSubmit} action="/login" className="signup-form-wrapper">
               <input
                 type="text"
@@ -47,6 +62,7 @@ class Signup extends Component {
                 name="username"
                 placeholder="Username"
                 onChange={this.handleChange}
+                required
               />
               <input
                 type="email"
@@ -54,6 +70,7 @@ class Signup extends Component {
                 name="email"
                 placeholder="Email"
                 onChange={this.handleChange}
+                required
               />
               <input
                 type="password"
@@ -62,6 +79,7 @@ class Signup extends Component {
                 name="password"
                 placeholder="Password"
                 onChange={this.handleChange}
+                required
               />
               <input
                 type="password"
@@ -70,6 +88,7 @@ class Signup extends Component {
                 name="c_password"
                 placeholder="Confirm Password"
                 onKeyUp={this.checkPassword}
+                required
               />
               <div className="submit-btn">
                 <input type="submit" className="fadeIn fourth" value="Sign Up" />
