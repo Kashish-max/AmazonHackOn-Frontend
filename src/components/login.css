@@ -41,7 +41,7 @@ h2 {
 #formContent {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: #fafafa;
+  background: #fefefe;
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -115,7 +115,7 @@ input[type="reset"]:active {
 }
 
 input {
-  background-color: #f6f6f6;
+  background-color: #fafafa;
   border: none;
   border-bottom: 1px solid #d4d5d9;
   color: #0d0d0d;

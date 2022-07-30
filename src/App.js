@@ -15,7 +15,7 @@ function App() {
         </div>
       </div>
       <Route component={Signup} path="/signup" />
-      <Route component={Login} path="/login" />
+      <Route component={Login} exact path={["/", "/login"]} />
     </BrowserRouter>
   );
 }

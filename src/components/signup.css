@@ -41,7 +41,7 @@ h2 {
 #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #fafafa;
+    background: #fefefe;
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -52,7 +52,7 @@ h2 {
 }
 
 #formFooter {
-    background-color: #f6f6f6;
+    background-color: #fafafa;
     border-top: 1px solid #dce8f1;
     padding: 25px;
     text-align: center;
@@ -109,7 +109,7 @@ input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:ac
 }
 
 input {
-    background-color: #f6f6f6;
+    background-color: #fbfbfb;
     color: #0d0d0d;
     padding: 15px 32px;
     text-align: center;

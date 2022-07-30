@@ -13,7 +13,7 @@ class Login extends Component {
             {/* <div className="fadeIn first mb-3">
               <h1>Login</h1>
             </div> */}
-            <form onSubmit={this.handleSubmit} className="login-form-wrapper">
+            <form onSubmit={this.handleSubmit} className="login-form-wrapper" autocomplete="off">
               <div>
               <input
                 type="text"
