@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import "./signup.css";
+import "./stylesheets/signup.css";
 
 class Signup extends Component {
   constructor(props) {
