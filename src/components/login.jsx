@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
+import { LogIn } from "../middlewares/logInUser";
 import "./stylesheets/login.css";
 
 class Login extends Component {
@@ -8,19 +8,13 @@ class Login extends Component {
     super(props);
     this.state = {};
   }
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault()
-    const { username, password } = event.target
-    const accessTokenURL = "http://localhost:8000/auth/token/"
-    const response = await axios.post(accessTokenURL, {
-      username: username.value,
-      password: password.value
-    })
-    if(response) {
-      localStorage.setItem('accessToken', response.data.access);
-      localStorage.setItem('refreshToken', response.data.refresh)      
-      window.location.replace('/dashboard');
+    let data = {
+      username: event.target.username.value,
+      password: event.target.password.value
     }
+    LogIn(data)
   };
 
   render() {
@@ -28,7 +22,7 @@ class Login extends Component {
       <BrowserRouter>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-            <form onSubmit={this.handleSubmit} className="login-form-wrapper" autocomplete="off" action="/">
+            <form onSubmit={this.handleSubmit} className="login-form-wrapper" autoComplete="off" action="/">
               <div>
               <input
                 type="text"

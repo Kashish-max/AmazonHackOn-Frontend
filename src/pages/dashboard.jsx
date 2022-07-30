@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { isAuthenticated } from '../middlewares/isAuthenticated';
+import { isAuthenticated } from '../middlewares/isUserAuthenticated';
 import { BrowserRouter, Route, Redirect} from "react-router-dom";
 
 export default function Dashboard() {

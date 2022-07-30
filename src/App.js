@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Authentication from "./pages/authentication";
 import Dashboard from "./pages/dashboard";
-import { isAuthenticated } from "./middlewares/isAuthenticated";
+import { isAuthenticated } from "./middlewares/isUserAuthenticated";
   
 function App() {
   return (

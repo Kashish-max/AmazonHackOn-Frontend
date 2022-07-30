@@ -3,7 +3,7 @@ import "./stylesheets/authentication.css";
 import Login from "../components/login";
 import Signup from "../components/signup";
 import { Route, Link, Redirect } from "react-router-dom";
-import { isAuthenticated } from "../middlewares/isAuthenticated";
+import { isAuthenticated } from "../middlewares/isUserAuthenticated";
 
 function Authentication() {
     return (

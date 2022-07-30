@@ -1,7 +1,6 @@
-import axios from "axios";
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
-
+import { Register } from "../middlewares/registerUser";
 import "./stylesheets/signup.css";
 
 class Signup extends Component {
@@ -11,7 +10,7 @@ class Signup extends Component {
       passwordMatching: true,
     };
   }
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault()
     const { username, email, password, c_password } = event.target
     if (password.value != c_password.value) {
@@ -21,26 +20,18 @@ class Signup extends Component {
       }, 2000)
       return false;
     }
-    const registerURL = "http://localhost:8000/auth/register/"
-    const response = await axios.post(registerURL, {
-      username: username.value,
-      email: email.value,
-      password: password.value
-    })
-    if(response) {
-      console.log(response)
-      window.location.replace('/login');
+    let data = {
+      username: event.target.username.value,
+      email: event.target.email.value,
+      password: event.target.password.value
     }
+    Register(data)
   };
 
   checkPassword = (event) => {
-    if(document.querySelector('#password-textfield').value !== event.target.value)
-    {
+    if(document.querySelector('#password-textfield').value !== event.target.value){
       document.querySelector('#confirm-password-textfield').classList.add("confirm-password-wrong-entry");
-    }
-
-    else
-    {
+    } else {
       document.querySelector('#confirm-password-textfield').classList.remove("confirm-password-wrong-entry");
     }
   };
