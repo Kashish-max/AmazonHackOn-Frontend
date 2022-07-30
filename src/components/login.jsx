@@ -18,10 +18,8 @@ class Login extends Component {
     })
     if(response) {
       localStorage.setItem('accessToken', response.data.access);
-      localStorage.setItem('refreshToken', response.data.refresh)
-      
-      // window.location.replace('http://localhost:3000/token');
-      return false
+      localStorage.setItem('refreshToken', response.data.refresh)      
+      window.location.replace('/dashboard');
     }
   };
 

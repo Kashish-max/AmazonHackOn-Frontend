@@ -6,16 +6,18 @@ export const isAuthenticated = () => {
     const loginURL = "http://localhost:8000/auth/login";
     const refreshTokenURL = "http://localhost:8000/auth/token/refresh/";
     if (accessToken) {
-        axios.get(loginURL, {
-            headers: {
-                Authorization: "Bearer " + accessToken
+        try {
+            const response = axios.get(loginURL, {
+                headers: {
+                    Authorization: "Bearer " + accessToken
+                }
+            })
+            if (response) {
+                console.log(response.status);
+                return true;
             }
-        })
-        .then(res => {
-            console.log(res.status)
-        })
-        .catch(err => {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             axios.post(refreshTokenURL, {
                 refresh: refreshToken
             }).then(res => {
@@ -23,6 +25,7 @@ export const isAuthenticated = () => {
                 if (res.data.refresh) localStorage.setItem('refreshToken', res.data.refresh)
                 window.location.replace('/login')
             })
-        })
+            return false;
+        }
     }
 }
