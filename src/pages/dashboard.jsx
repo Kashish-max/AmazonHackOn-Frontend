@@ -14,6 +14,7 @@ import { LogOut } from '../middlewares/logOutUser';
 
 export default function Dashboard() {
 
+  const months = ["Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"]; 
   function nFormatter(num) {
     if (num >= 1000000000) {
        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
@@ -119,6 +120,24 @@ export default function Dashboard() {
         </Button>
 
       </Form>
+      </Container>
+
+      <Container className='mt-5 mb-3'>
+        <h3>Transcations</h3>
+        <Row className='justify-content-between'>
+          {
+            months.map((m) => (
+              <Col lg="4" className='px-2'>
+                <div className='transaction-month-wrapper'>
+                  <div className='d-flex'>
+                    <Col lg="4" className='px-3 py-3 cell-month-wrapper'>{m}</Col>
+                    <Col lg="8" className='px-4 py-3 cell-amount-wrapper'><h6>{nFormatter(78789)}</h6></Col>
+                  </div>
+                </div>
+              </Col>
+            ))
+          }
+        </Row>
       </Container>
     </div>
   )

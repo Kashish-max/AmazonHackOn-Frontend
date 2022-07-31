@@ -28,3 +28,18 @@
     color:#212529;
     font-size: 14px;
 }
+
+.transaction-month-wrapper{
+    border:0.1px solid #ced4da;
+}
+
+.cell-amount-wrapper{
+    border-left: 1px solid #ced4da;
+    color: #212529;
+}
+
+.cell-month-wrapper{
+    background-color: #e9ecef;
+    font-weight: 14px;
+    color:#495057;
+}
