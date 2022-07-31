@@ -5,3 +5,9 @@
 .private-acnt-radio{
     padding: 0 !important;
 }
+
+.form-check-input {
+    position: relative !important;
+    margin-left: 0 !important;
+    margin-right: 10px;
+}

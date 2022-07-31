@@ -74,9 +74,9 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+.login-form-wrapper input[type="button"],
+.login-form-wrapper input[type="submit"],
+.login-form-wrapper input[type="reset"] {
   background-color: #56baed;
   border-bottom: 1px solid #d4d5d9;
   color: white;
@@ -98,15 +98,15 @@ input[type="reset"] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+.login-form-wrapper input[type="button"]:hover,
+.login-form-wrapper input[type="submit"]:hover,
+.login-form-wrapper input[type="reset"]:hover {
   background-color: #39ace7;
 }
 
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active {
+.login-form-wrapper input[type="button"]:active,
+.login-form-wrapper input[type="submit"]:active,
+.login-form-wrapper input[type="reset"]:active {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -114,7 +114,7 @@ input[type="reset"]:active {
   transform: scale(0.95);
 }
 
-input {
+.login-form-wrapper input {
   background-color: #fafafa;
   border: none;
   border-bottom: 1px solid #d4d5d9;
@@ -136,12 +136,12 @@ input {
   border-radius: 5px;
 }
 
-input:focus {
+.login-form-wrapper input:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input:placeholder {
+.login-form-wrapper input:placeholder {
   color: #cccccc;
 }
 

@@ -73,7 +73,11 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"], input[type="submit"], input[type="reset"] {
+.signup-form-wrapper input {
+    border: none;
+}
+
+.signup-form-wrapper input[type="button"], .signup-form-wrapper input[type="submit"], .signup-form-wrapper input[type="reset"] {
     background-color: #56baed;
     border: none;
     border-bottom: 1px solid #d4d5d9;
@@ -96,11 +100,11 @@ input[type="button"], input[type="submit"], input[type="reset"] {
     transition: all 0.3s ease-in-out;
 }
 
-input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+.signup-form-wrapper input[type="button"]:hover, .signup-form-wrapper input[type="submit"]:hover, .signup-form-wrapper input[type="reset"]:hover {
     background-color: #39ace7;
 }
 
-input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
+.signup-form-wrapper input[type="button"]:active, .signup-form-wrapper input[type="submit"]:active, .signup-form-wrapper input[type="reset"]:active {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -108,7 +112,7 @@ input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:ac
     transform: scale(0.95);
 }
 
-input {
+.signup-form-wrapper input {
     background-color: #fbfbfb;
     color: #0d0d0d;
     padding: 15px 32px;
@@ -128,7 +132,7 @@ input {
     border-radius: 5px 5px 5px 5px;
 }
 
-/* input:focus {
+/* .signup-form-wrapper input:focus {
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
 } */
@@ -137,7 +141,7 @@ input {
     border-bottom: 2px solid red!important;
 }
 
-input:placeholder {
+.signup-form-wrapper input:placeholder {
     color: #cccccc;
 }
 

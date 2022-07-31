@@ -18,5 +18,6 @@ export const Register = async (data) => {
         let response = error.response.data
         let errorKey = Object.keys(response)[0]
         alert(response[errorKey][0])
+        return response[errorKey][0]
     }
 }

@@ -17,7 +17,7 @@ export const isAuthenticated = () => {
                 return true;
             }
         } catch (error) {
-            console.log(error)
+            console.log(error.response.data)
             axios.post(refreshTokenURL, {
                 refresh: refreshToken
             }).then(res => {
