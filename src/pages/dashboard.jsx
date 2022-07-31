@@ -13,9 +13,22 @@ import './stylesheets/dashboard.css'
 import { LogOut } from '../middlewares/logOutUser';
 
 export default function Dashboard() {
+
+  function nFormatter(num) {
+    if (num >= 1000000000) {
+       return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+    }
+    if (num >= 1000000) {
+       return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+    if (num >= 1000) {
+       return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    }
+    return num;
+}
   return (
     // !isAuthenticated() ? <Redirect to="/login" /> : 
-      <div>
+      <div className='dashboard-page'>
       <Navbar bg="light">
         <Container>
             <Navbar.Brand href="/" style={{ "fontWeight": "bold"}}>Dashboard</Navbar.Brand>
@@ -27,6 +40,18 @@ export default function Dashboard() {
 
         <Row className='justify-content-between'>
           <Col lg="9" className='d-flex flex-column justify-content-between'>
+            <div className='followers-info-header-wrapper'>
+            <Row>
+              <Col className='text-right'>
+              <h6 className="f-info-header">Followers</h6>
+              <h3 className='f-info-header-count'>{nFormatter(12345)}</h3>
+              </Col>
+              <Col className='text-right'>
+              <h6 className='f-info-header'>Following</h6>
+              <h3 className='f-info-header-count'>{nFormatter(12345635)}</h3>
+              </Col>
+            </Row>
+            </div>
           <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
           <InputGroup className="mb-3">

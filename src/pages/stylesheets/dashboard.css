@@ -15,3 +15,16 @@
 .upload-button-dashboard {
     text-align: center;
 }
+
+.followers-info-header-wrapper {
+    align-self: end;
+}
+
+.f-info-header-count{
+    font-weight: 700;
+}
+
+.f-info-header{
+    color:#212529;
+    font-size: 14px;
+}
