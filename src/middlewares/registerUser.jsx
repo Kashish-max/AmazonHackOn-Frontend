@@ -3,7 +3,7 @@ import axios from "axios";
 export const Register = async (data) => {
     try {
         const { username, email, password } = data
-        const registerURL = "http://localhost:8000/auth/register/"
+        const registerURL = "https://amazonhackon.herokuapp.com/auth/register/"
         const response = await axios.post(registerURL, {
             username: username,
             email: email,

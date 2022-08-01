@@ -3,8 +3,8 @@ import axios from "axios";
 export const isAuthenticated = () => {
     const accessToken = localStorage.getItem('accessToken') ? localStorage.getItem('accessToken') : null;
     const refreshToken = localStorage.getItem('refreshToken') ? localStorage.getItem('refreshToken') : null;
-    const loginURL = "http://localhost:8000/auth/login";
-    const refreshTokenURL = "http://localhost:8000/auth/token/refresh/";
+    const loginURL = "https://amazonhackon.herokuapp.com/auth/login";
+    const refreshTokenURL = "https://amazonhackon.herokuapp.com/auth/token/refresh/";
     if (accessToken) {
         try {
             const response = axios.get(loginURL, {
@@ -13,8 +13,7 @@ export const isAuthenticated = () => {
                 }
             })
             if (response) {
-                console.log(response.status);
-                return true;
+                return { isUserAuthenticated : true, userData: response };
             }
         } catch (error) {
             console.log(error.response.data)

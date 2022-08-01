@@ -13,7 +13,7 @@ class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { username, email, password, c_password } = event.target
-    if (password.value != c_password.value) {
+    if (password.value !== c_password.value) {
       this.setState({ passwordMatching: false })
       setTimeout(() => {
         this.setState({ passwordMatching: true })
@@ -21,9 +21,9 @@ class Signup extends Component {
       return false;
     }
     let data = {
-      username: event.target.username.value,
-      email: event.target.email.value,
-      password: event.target.password.value
+      username: username.value,
+      email: email.value,
+      password: password.value
     }
     Register(data)
   };

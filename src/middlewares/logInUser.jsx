@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const LogIn = async (data) => {
     const { username, password } = data
-    const accessTokenURL = "http://localhost:8000/auth/token/"
+    const accessTokenURL = "https://amazonhackon.herokuapp.com/auth/token/"
     try {
         const response = await axios.post(accessTokenURL, {
             username: username,
