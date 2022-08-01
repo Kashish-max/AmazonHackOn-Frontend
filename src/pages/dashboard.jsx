@@ -157,7 +157,7 @@ export default function Dashboard() {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Submit
+          Update
         </Button>
 
       </Form>
