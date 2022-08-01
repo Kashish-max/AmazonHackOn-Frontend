@@ -26,7 +26,7 @@ export const UpdateUser = async (data) => {
         console.log(error);
         let response = error.response.data
         let errorKey = Object.keys(response)[0]
-        alert(response[errorKey][0])
+        alert(response[errorKey])
         return response[errorKey][0]
     }
 }
