@@ -27,7 +27,6 @@ export default function Dashboard() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { username, email, first_name, last_name, website, description, isPrivate } = event.target
-    isPrivate.value === "on" ? (isPrivate.value = true) : (isPrivate.value = false)
     const data = {
       username: username.value,
       email: email.value,
@@ -165,7 +164,7 @@ export default function Dashboard() {
       </Container>
 
       <Container className='mt-5 mb-3'>
-        <h3>Transcations</h3>
+        <h3>Transactions</h3>
         <Row className='justify-content-between'>
           {
             months.map((m) => (
